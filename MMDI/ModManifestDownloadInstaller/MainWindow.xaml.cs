@@ -20,9 +20,12 @@ namespace ModManifestDownloadInstaller
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public MainWindow()
         {
             InitializeComponent();
+
+            Logger.Info("Application Start.");
         }
     }
 }

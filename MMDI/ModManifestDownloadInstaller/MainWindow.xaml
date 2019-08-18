@@ -100,19 +100,19 @@
                     </StackPanel>
                 </Border>
                 <Border Name="HomeBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Visible">
-                    <TextBlock Text="MOD MANIFEST DOWNLOAD INSTALLER" Style="{StaticResource MainTitleTextBlock}"/>
+                    <Frame VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="HomePage.xaml" />
                 </Border>
                 <Border Name="CreateManifestItemBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-                    <TextBlock Text="CREATE MAINFEST ITEM FILE" Style="{StaticResource MainTitleTextBlock}"/>
+                    <Frame VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="CreateManifestItemPage.xaml" />
                 </Border>
                 <Border Name="CreateModManifestBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-                    <TextBlock Text="CREATE MOD MAINFEST FILE" Style="{StaticResource MainTitleTextBlock}"/>
+                    <Frame VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="CreateModManifestPage.xaml" />
                 </Border>
                 <Border Name="InstallModManifestBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-                    <TextBlock Text="INSTALL MOD MAINFEST" Style="{StaticResource MainTitleTextBlock}"/>
+                    <Frame VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="InstallModManifestPage.xaml" />
                 </Border>
                 <Border Name="SettingsBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-                    <TextBlock Text="SETTINGS" Style="{StaticResource MainTitleTextBlock}"/>
+                    <Frame VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="SettingsPage.xaml" />
                 </Border>
             </Grid>
         </Border>

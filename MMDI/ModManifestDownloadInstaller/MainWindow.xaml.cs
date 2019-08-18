@@ -27,5 +27,55 @@ namespace ModManifestDownloadInstaller
 
             Logger.Info("Application Start.");
         }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.Trace("HomeButton_Click");
+            HomeBorder.Visibility = Visibility.Visible;
+            CreateManifestItemBorder.Visibility = Visibility.Hidden;
+            CreateModManifestBorder.Visibility = Visibility.Hidden;
+            InstallModManifestBorder.Visibility = Visibility.Hidden;
+            SettingsBorder.Visibility = Visibility.Hidden;
+        }
+
+        private void CreateManifestItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.Trace("CreateManifestItemButton_Click");
+            HomeBorder.Visibility = Visibility.Hidden;
+            CreateManifestItemBorder.Visibility = Visibility.Visible;
+            CreateModManifestBorder.Visibility = Visibility.Hidden;
+            InstallModManifestBorder.Visibility = Visibility.Hidden;
+            SettingsBorder.Visibility = Visibility.Hidden;
+        }
+
+        private void CreateModManifestButton_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.Trace("CreateModManifestButton_Click");
+            HomeBorder.Visibility = Visibility.Hidden;
+            CreateManifestItemBorder.Visibility = Visibility.Hidden;
+            CreateModManifestBorder.Visibility = Visibility.Visible;
+            InstallModManifestBorder.Visibility = Visibility.Hidden;
+            SettingsBorder.Visibility = Visibility.Hidden;
+        }
+
+        private void InstallModManifestButton_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.Trace("InstallModManifestButton_Click");
+            HomeBorder.Visibility = Visibility.Hidden;
+            CreateManifestItemBorder.Visibility = Visibility.Hidden;
+            CreateModManifestBorder.Visibility = Visibility.Hidden;
+            InstallModManifestBorder.Visibility = Visibility.Visible;
+            SettingsBorder.Visibility = Visibility.Hidden;
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.Trace("SettingsButton_Click");
+            HomeBorder.Visibility = Visibility.Hidden;
+            CreateManifestItemBorder.Visibility = Visibility.Hidden;
+            CreateModManifestBorder.Visibility = Visibility.Hidden;
+            InstallModManifestBorder.Visibility = Visibility.Hidden;
+            SettingsBorder.Visibility = Visibility.Visible;
+        }
     }
 }

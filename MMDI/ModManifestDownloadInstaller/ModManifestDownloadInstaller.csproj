@@ -94,6 +94,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Images\Grey Wall\letter-m-24.png" />
+    <Resource Include="Images\Grey Wall\letter-i-24.png" />
+    <Resource Include="Images\Grey Wall\letter-d-24.png" />
+    <Resource Include="Images\White\letter-d-24.png" />
+    <Resource Include="Images\White\letter-i-24.png" />
+    <Resource Include="Images\White\letter-m-24.png" />
+    <Resource Include="Images\White\plus-6-128.png" />
+    <Resource Include="Images\White\list-2-128.png" />
+    <Resource Include="Images\White\gear-2-128.png" />
+    <Resource Include="Images\White\upload-2-128.png" />
+    <Resource Include="Images\Grey Wall\letter-d-128.png" />
+    <Resource Include="Images\Grey Wall\letter-i-128.png" />
+    <Resource Include="Images\Grey Wall\letter-m-128.png" />
+    <Resource Include="Images\White\house-128.png" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

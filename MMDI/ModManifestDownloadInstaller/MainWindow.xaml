@@ -5,8 +5,116 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModManifestDownloadInstaller"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Mod Manifest Download Installer" Height="900" Width="1600">
+
+    <Window.Resources>
+        <Style x:Key="MainNavigationButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="#ababab" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MainTitleTextBlock" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#525252" />
+        </Style>
+    </Window.Resources>
+
+    <DockPanel Name="RootDockPanel">
+        <Border DockPanel.Dock="Bottom" BorderBrush="WhiteSmoke" BorderThickness="1">
+            <StatusBar Name="MainStatusBar" Background="DimGray" Foreground="WhiteSmoke" MinHeight="36">
+                <DockPanel>
+                    <TextBlock Text="Ready" Margin="10,0" />
+                </DockPanel>
+            </StatusBar>
+        </Border>
+        <Border DockPanel.Dock="Left" BorderBrush="WhiteSmoke" BorderThickness="1">
+            <DockPanel Name="MainNavigationMenu" Background="DimGray" MinWidth="100">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5,10">
+                    <Image Source="Images/White/letter-m-24.png" Height="24" Width="24"/>
+                    <Image Source="Images/White/letter-m-24.png" Height="24" Width="24"/>
+                    <Image Source="Images/White/letter-d-24.png" Height="24" Width="24"/>
+                    <Image Source="Images/White/letter-i-24.png" Height="24" Width="24"/>
+                </StackPanel>
+                <Button DockPanel.Dock="Top" Background="DimGray" BorderBrush="DimGray" BorderThickness="0" Height="92" Width="92" Margin="0,10"
+                        Name="HomeButton" Style="{StaticResource MainNavigationButton}" Click="HomeButton_Click"
+                        ToolTip="Display the default home content." ToolTipService.InitialShowDelay="500" ToolTipService.ShowDuration="2000" ToolTipService.BetweenShowDelay="1000">
+                    <Image Source="Images/White/house-128.png" Height="88" Width="88"/>
+                </Button>
+                <Button DockPanel.Dock="Top" Background="DimGray" BorderBrush="DimGray" BorderThickness="0" Height="92" Width="92" Margin="0,10"
+                        Name="CreateManifestItemButton" Style="{StaticResource MainNavigationButton}" Click="CreateManifestItemButton_Click"
+                        ToolTip="Create a new ManifestItem file." ToolTipService.InitialShowDelay="500" ToolTipService.ShowDuration="2000" ToolTipService.BetweenShowDelay="1000">
+                    <Image Source="Images/White/plus-6-128.png" Height="88" Width="88"/>
+                </Button>
+                <Button DockPanel.Dock="Top" Background="DimGray" BorderBrush="DimGray" BorderThickness="0" Height="92" Width="92" Margin="0,10"
+                        Name="CreateModManifestButton" Style="{StaticResource MainNavigationButton}" Click="CreateModManifestButton_Click"
+                        ToolTip="Create a new Mod Manifest file." ToolTipService.InitialShowDelay="500" ToolTipService.ShowDuration="2000" ToolTipService.BetweenShowDelay="1000">
+                    <Image Source="Images/White/list-2-128.png" Height="88" Width="88"/>
+                </Button>
+                <Button DockPanel.Dock="Top" Background="DimGray" BorderBrush="DimGray" BorderThickness="0" Height="92" Width="92" Margin="0,10"
+                        Name="InstallModManifestButton" Style="{StaticResource MainNavigationButton}" Click="InstallModManifestButton_Click"
+                        ToolTip="Install Mod Manifest." ToolTipService.InitialShowDelay="500" ToolTipService.ShowDuration="2000" ToolTipService.BetweenShowDelay="1000">
+                    <Image Source="Images/White/upload-2-128.png" Height="88" Width="88"/>
+                </Button>
+                <Button DockPanel.Dock="Bottom" Background="DimGray" BorderBrush="DimGray" BorderThickness="0" Height="92" Width="92" Margin="0,10"
+                        Name="SettingsButton" Style="{StaticResource MainNavigationButton}" Click="SettingsButton_Click"
+                        ToolTip="Update Application Settings." ToolTipService.InitialShowDelay="500" ToolTipService.ShowDuration="2000" ToolTipService.BetweenShowDelay="1000">
+                    <Image Source="Images/White/gear-2-128.png" Height="88" Width="88"/>
+                </Button>
+                <Grid />
+            </DockPanel>
+        </Border>
+        <Border Name="MainContentBorder" Background="LightGray" BorderBrush="WhiteSmoke" BorderThickness="1" Visibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0" Grid.Column="1" Grid.Row="0" Visibility="Visible">
+                    <StackPanel Orientation="Horizontal" Margin="5,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <Image Source="Images/Grey Wall/letter-m-128.png" Height="128" Width="128"/>
+                        <Image Source="Images/Grey Wall/letter-m-128.png" Height="128" Width="128"/>
+                        <Image Source="Images/Grey Wall/letter-d-128.png" Height="128" Width="128"/>
+                        <Image Source="Images/Grey Wall/letter-i-128.png" Height="128" Width="128"/>
+                    </StackPanel>
+                </Border>
+                <Border Name="HomeBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Visible">
+                    <TextBlock Text="MOD MANIFEST DOWNLOAD INSTALLER" Style="{StaticResource MainTitleTextBlock}"/>
+                </Border>
+                <Border Name="CreateManifestItemBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock Text="CREATE MAINFEST ITEM FILE" Style="{StaticResource MainTitleTextBlock}"/>
+                </Border>
+                <Border Name="CreateModManifestBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock Text="CREATE MOD MAINFEST FILE" Style="{StaticResource MainTitleTextBlock}"/>
+                </Border>
+                <Border Name="InstallModManifestBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock Text="INSTALL MOD MAINFEST" Style="{StaticResource MainTitleTextBlock}"/>
+                </Border>
+                <Border Name="SettingsBorder" BorderThickness="0" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock Text="SETTINGS" Style="{StaticResource MainTitleTextBlock}"/>
+                </Border>
+            </Grid>
+        </Border>
+    </DockPanel>
 </Window>
